@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CarrinhoMercado
 {
-    public class AuditLogSpy
+    public class AuditLogSpy //classe serve "espiar" se uma ação foi realizada.
     {
-        public bool LogFinalizacaoChamada { get; private set; }
-
-        //metodo de finalização
-        public void LogFinalizacao()
+        public bool LogFinalizacaoChamada { get; private set; } //propriedade Log... tipo boleano
+                                                                //que indica se o método LogFinalizacao() foi chamado ou não.
+                                                                //tem o private pq so pode ser alterada dentro da propria classe
+        public void LogFinalizacao() // criando o metodo
         {
-            LogFinalizacaoChamada = true;
+            LogFinalizacaoChamada = true;      // define como true
         }
-        //metodo de Resetar
-        public void Reset()
+
+        public void Reset() // criado metodo reset
         {
-            LogFinalizacaoChamada = false;
+            LogFinalizacaoChamada = false; //definida como false para pode resetar o SPY
         }
     }
 
