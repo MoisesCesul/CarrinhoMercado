@@ -5,15 +5,18 @@ namespace CarrinhoTeste
     public class CarrinhoDeComprasTests
     {
         [Fact]
+
+        //Teste de verificaÃ§Ã£o se carrinho esta vazio, e o spy deve retorna false
         public void FinalizarCompra_CarrinhoVazio_DeveRetornarFalso()
         {
-      
+            //instancia Classe SPY
             var auditLogSpy = new AuditLogSpy();
+              //instancia Classe Carrinho de comprsas
             var carrinho = new CarrinhoDeCompras(auditLogSpy);
 
-      
+              //Finaliza compra com produtos vazios
             var resultado = carrinho.FinalizarCompra();
-
+              //VerificaÃ§Ã£o do esperado
             Assert.False(resultado);
             Assert.False(auditLogSpy.LogFinalizacaoChamada); 
         }
@@ -36,7 +39,7 @@ namespace CarrinhoTeste
         }
 
         [Fact]
-        public void FinalizarCompra_DeveLimparCarrinhoApósFinalização()
+        public void FinalizarCompra_DeveLimparCarrinhoApï¿½sFinalizaï¿½ï¿½o()
         {
             var auditLogSpy = new AuditLogSpy();
             var carrinho = new CarrinhoDeCompras(auditLogSpy);

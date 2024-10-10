@@ -11,20 +11,21 @@ namespace CarrinhoMercado
         private List<Produto> produtos;
         private AuditLogSpy auditLog;
 
-        public CarrinhoDeCompras()
-        {
-            produtos = new List<Produto>();
-            this.auditLog = auditLog;
-        }
+
+        //adiciona um produto
         public void AdicionarProduto(Produto produto)
         {
             produtos.Add(produto);
         }
+
+        //construtor da classe
+
         public CarrinhoDeCompras(AuditLogSpy auditLog)
         {
             produtos = new List<Produto>();
             this.auditLog = auditLog;
         }
+        //remove produto
         public void RemoverProduto(Produto produto)
         {
             if (produtos.Remove(produto))
@@ -36,7 +37,7 @@ namespace CarrinhoMercado
                 Console.WriteLine("Produto não encontrado no carrinho.");
             }
         }
-
+        //calcula preço
         public decimal CalcularTotal()
         {
             decimal total = 0;
@@ -46,7 +47,7 @@ namespace CarrinhoMercado
             }
             return total;
         }
-
+        //mostra os produtos
         public void MostrarProdutos()
         {
             Console.WriteLine("Produtos no carrinho:");
@@ -55,6 +56,7 @@ namespace CarrinhoMercado
                 Console.WriteLine(produto);
             }
         }
+        //finaliza a compra
         public bool FinalizarCompra()
         {
             if (produtos.Count == 0)

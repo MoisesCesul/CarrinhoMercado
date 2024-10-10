@@ -10,11 +10,12 @@ namespace CarrinhoMercado
     {
         public bool LogFinalizacaoChamada { get; private set; }
 
+        //metodo de finalização
         public void LogFinalizacao()
         {
             LogFinalizacaoChamada = true;
         }
-
+        //metodo de Resetar
         public void Reset()
         {
             LogFinalizacaoChamada = false;

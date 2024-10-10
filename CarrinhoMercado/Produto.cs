@@ -16,7 +16,7 @@ namespace CarrinhoMercado
             Nome = nome;
             Preco = preco;
         }
-
+        //toda classe por padrão extende uma classe chamada object, nela tem toString no qual eu estou sobrescrevendo
         public override string ToString()
         {
             return $"{Nome} - R$ {Preco:F2}";
